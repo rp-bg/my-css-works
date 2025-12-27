@@ -39,10 +39,10 @@ Option 2 — Simple HTTP server (recommended)
 Run one of the commands from the project root in a terminal:
 
 ```bash
-# Python 3
-python3 -m http.server 8000
+npm install -g http-server
 
-# Then open http://localhost:8000 in your browser
+# From Porject root folder
+http-server .
 ```
 
 Option 3 — VS Code Live Server
