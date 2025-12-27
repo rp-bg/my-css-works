@@ -1,0 +1,119 @@
+/* Add your styles here */
+:root {
+  --bg-main: linear-gradient(135deg, #ffa1a1, #ffffee);
+  --form-primary: #1f1f1f;
+  --form-bg-color: #fff;
+  --form-title-bg-color: #f94242;
+  --form-title-color: #fff;
+  --form-error-color: red;
+  --primary-text-color: #000;
+  --place-holder-color: gray;
+  --box-shadow: 4px 4px 10px #00000033;
+  --font-size: 16px;
+  /* --label-font-size: calc(var(--font-size)); */
+  /* --input-box-height: calc(3 * var(--label-font-size));
+  --label-position-top: calc(0.25 * var(--input-box-height)); */
+  --label-font-size: 1rem;
+  --input-box-height: 3rem;
+  --label-position-top: 0.75rem;
+}
+
+* {
+  color: var(--primary-text-color);
+  box-sizing: border-box;
+  font-size: var(--font-size);
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background-image: var(--bg-main);
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+#login {
+  background-color: var(--form-bg-color);
+  border: none;
+  border-radius: 10px;
+  width: 500px;
+  padding: 40px;
+  text-align: center;
+  position: relative;
+
+  h1 {
+    background-color: var(--form-title-bg-color);
+    color: var(--form-title-color);
+    border-radius: 10px 20px;
+    padding: 10px 20px ;
+    font-size: calc(2px + var(--font-size));
+    position: absolute;
+    top: -0.75em;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: var(--box-shadow);
+  ;
+  }
+
+  fieldset {
+    position: relative;
+    padding: 0;
+    border: none;
+
+    input {
+      width: 100%;
+      height: var(--input-box-height);
+      margin-bottom: 20px;
+      border-radius: 10px;
+      border: 1px solid var(--place-holder-color);
+      outline: none;
+      padding-left: 1em;
+    }
+
+    label {
+      font-size: var(--label-font-size);
+      padding: 0 5px 0 5px;
+      background-color: var(--form-bg-color);
+      position: absolute;
+      top: var(--label-position-top);
+      left: 1em;
+      color: var(--place-holder-color);
+      pointer-events: none;
+      transition: 0.3s ease;
+    }
+
+    input[type = "submit"] {
+      background-color: var(--form-primary);
+      color: var(--form-bg-color);
+      border: 1px solid var(--form-primary);
+      width: 100%;
+      cursor: pointer;
+    }
+
+    a {
+      text-decoration: none;
+      font-size: calc(var(--font-size) - 2px);
+    }
+
+    input[type = "email"]:focus + label,
+    input[type = "password"]:focus + label,
+    input:not(:placeholder-shown) + label {
+      transform: translateY(calc(-1.5 * var(--label-position-top) - 2px));
+      font-size: calc(var(--font-size) - 2px);
+      color: var(--form-primary);
+      font-weight: 500;
+    }
+
+    input:invalid:not(:placeholder-shown) {
+      border-color: var(--form-error-color);
+    }
+
+    input:invalid:not(:placeholder-shown) + label {
+      color: var(--form-error-color);
+    }
+  }
+}
+

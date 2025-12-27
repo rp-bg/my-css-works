@@ -1,0 +1,16 @@
+.typewriter {
+  font-family: 'Courier New', Courier, monospace;
+  overflow: hidden; /* Ensures the text is hidden until animated */
+  border-right: .15em solid rgb(0, 0, 0); /* The cursor */
+  white-space: nowrap; /* Prevents the text from wrapping */
+  animation: typing 3.5s steps(28, end), blink-caret .75s step-end;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 56ch }
+}
+
+@keyframes blink-caret {
+  50% { border-color: rgb(0, 0, 0); }
+}

@@ -1,0 +1,79 @@
+/* Scroll-effect: CSS-only two-column panels with sticky left content
+	 and snapping full-height sections on the right. */
+
+/* Reset / base */
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color:#111; }
+
+/* The main scroll container (uses native vertical scrolling and snap) */
+.snap-container {
+	height: 100vh;
+	overflow-y: auto;
+	/* Strong snap behavior so panels jump into place and only one is visible */
+	scroll-snap-type: y mandatory;
+	scroll-snap-stop: always;
+	/* Use immediate snapping during user scroll to make only one section visible
+		 at a time (remove smooth scrolling which can show partial sections). */
+	scroll-behavior: auto;
+	overscroll-behavior-y: contain;
+	-webkit-overflow-scrolling: auto;
+}
+
+/* Each panel fills the viewport and is a two-column grid */
+.panel {
+	display: grid;
+	grid-template-columns: 42% 58%;
+	align-items: stretch;
+	height: 100vh; /* full viewport */
+	scroll-snap-align: start;
+	scroll-snap-stop: always;
+}
+
+.left {
+	background: #fafafa;
+	border-right: 1px solid rgba(0,0,0,0.06);
+	display: block;
+}
+
+.left-inner {
+	position: sticky;
+	top: 0; /* stays visible while this panel is in view */
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 48px;
+}
+
+.left-inner h2 { margin: 0 0 12px 0; font-size: 2rem; }
+.left-inner p { margin: 0 0 20px 0; color:#444; max-width: 34rem; }
+.left-inner img { width: 100%; max-width: 480px; height: auto; border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+
+.right {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	padding: 48px;
+	background: linear-gradient(180deg, #fff 0%, #fff 60%, #f7f9fb 100%);
+}
+
+.right-item {
+	width: 100%;
+	max-width: 640px;
+	padding: 28px;
+	border-radius: 12px;
+	box-shadow: 0 8px 30px rgba(12,24,40,0.06);
+	background: white;
+}
+
+.right-item h3 { margin: 0 0 8px 0; font-size: 1.5rem; }
+.right-item p { margin: 0; color:#555; }
+
+/* Make layout responsive: stack columns on narrow screens */
+@media (max-width: 900px) {
+	.panel { grid-template-columns: 1fr; }
+	.left-inner { padding: 28px; }
+	.right { padding: 28px; }
+}
+
