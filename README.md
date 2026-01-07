@@ -28,6 +28,9 @@ A small collection of CSS experiments and micro-projects to practice layout, ani
 - **Scroll to Order** — [scroll-to-order/index.html](scroll-to-order/index.html)
 	- What: A sibling demo to "Content Chaos to Order" that focuses on using scroll or interaction to trigger the reordering of elements.
 
+- **Car Hero Animation** - [car-hero-animation/index.html](car-hero-animation/index.html)
+	- What: Car hero animation. Tools used - Google Whisk, Flow and Ezgif.
+
 ## How to run locally
 
 Option 1 — Quick (open in browser)
