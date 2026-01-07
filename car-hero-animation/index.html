@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Auto G — The Lux Car</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="globals.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="hero-inner">
+        <canvas id="hero-canvas" aria-hidden="true"></canvas>
+        <div id="loading" class="loading">Loading <span id="loading-percent">0%</span></div>
+        <div class="overlay overlay-center" data-start="0" data-end="0.25">
+          <h1 class="title">Auto G. The Lux Car.</h1>
+        </div>
+        <div class="overlay overlay-left" data-start="0.28" data-end="0.45">
+          <h2>Precision Engineering.</h2>
+        </div>
+        <div class="overlay overlay-right" data-start="0.55" data-end="0.75">
+          <h2>Comfortable Drive.</h2>
+        </div>
+        <div class="overlay overlay-center-cta" data-start="0.85" data-end="1">
+          <a class="cta" href="#">Move with Pride.</a>
+        </div>
+      </div>
+    </section>
+    <section class="content">
+      <div class="container">
+        <p class="muted">Scroll to experience the engineering reveal.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="car.js" type="module"></script>
+</body>
+</html>
