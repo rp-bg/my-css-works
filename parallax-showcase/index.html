@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature's Echo | Parallax Experience</title>
+    <meta name="description"
+        content="A premium 3D parallax experience showcasing the beauty of nature through modern web technologies.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="parallax-wrapper">
+        <header class="hero-section">
+            <div class="parallax-layer background">
+                <img src="img/hero.png" alt="Misty Mountains">
+            </div>
+            <div class="parallax-layer midground">
+                <div class="hero-content">
+                    <h1>NATURE'S ECHO</h1>
+                    <p>Discover the hidden whispers of the mountains.</p>
+                    <a href="#explore" class="btn-primary">Explore Now</a>
+                </div>
+            </div>
+        </header>
+
+        <section id="explore" class="content-section">
+            <div class="container">
+                <div class="glass-card" id="card-1">
+                    <h2>Serenity in Silence</h2>
+                    <p>Experience the profound stillness of high altitudes, where the only sound is the wind dancing
+                        between ancient peaks.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="floating-section">
+            <div class="parallax-layer floating-element rock-1">
+                <img src="img/rock.png" alt="Floating Rock">
+            </div>
+            <div class="parallax-layer floating-element rock-2">
+                <img src="img/rock.png" alt="Floating Rock">
+            </div>
+            <div class="container overlay-content">
+                <div class="glass-card right">
+                    <h2>Weightless Wonders</h2>
+                    <p>In this digital forest, even the heaviest stones find their rhythm in the air. A testament to the
+                        fluidity of imagination.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="reveal-section">
+            <div class="parallax-layer forest-bg">
+                <img src="img/forest.png" alt="Misty Forest">
+            </div>
+            <div class="reveal-content">
+                <div class="container">
+                    <h2 class="title-reveal">THE FOREST AWAITS</h2>
+                    <div class="grid">
+                        <div class="grid-item">
+                            <h3>Ancient Trees</h3>
+                            <p>Standing tall for centuries, observing the world change.</p>
+                        </div>
+                        <div class="grid-item">
+                            <h3>Deep Roots</h3>
+                            <p>A network of life hidden beneath the moss and mist.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <div class="container">
+                <p>&copy; 2026 Nature's Echo Showcase. Built with passion.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Simple intersection observer for reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.glass-card, .title-reveal, .grid-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
