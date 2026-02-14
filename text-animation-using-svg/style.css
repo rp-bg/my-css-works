@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('/img/bg-img.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.animated-text {
+    font-size: 4rem;
+    font-weight: bold;
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 2px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: animate 5s linear forwards;
+}
+
+@keyframes animate {
+    to {
+        stroke-dashoffset: 0;
+    }
+}

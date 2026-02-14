@@ -31,6 +31,9 @@ A small collection of CSS experiments and micro-projects to practice layout, ani
 - **Car Hero Animation** - [car-hero-animation/index.html](car-hero-animation/index.html)
 	- What: Car hero animation. Tools used - Google Whisk, Flow and Ezgif.
 
+- **Text animation using SVG** - [text-animation-using-svg/index.html](text-animation-using-svg/index.html)
+	- What: Animated text with stroke and no fill.
+
 ## How to run locally
 
 Option 1 — Quick (open in browser)
