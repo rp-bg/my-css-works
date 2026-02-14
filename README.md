@@ -1,6 +1,6 @@
 # My CSS Works
 
-A small collection of CSS experiments and micro-projects to practice layout, animation, and interaction patterns.
+A collection of CSS experiments and micro-projects to practice layout, animation, and interaction patterns.
 
 ## Overview
 
